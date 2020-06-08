@@ -9,17 +9,19 @@ const initial = {
   player1: 0,
   player2: 0,
   p1Serving: true,
+  winner: 0,
 };
 
 const player1 = state => ({ ...state, player1: state.player1 + 1 });
 const player2 = state => ({ ...state, player2: state.player2 + 1 });
 const serving = state => ({ ...state, p1Serving: (state.player1 + state.player2) % 5 === 0 ? !state.p1Serving : state.p1Serving });
+const winner = state => ({ ...state, winner: state.player1 >= 21 ? 1 : (state.player2 >= 21 ? 2 : 0) });
 
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PLAYER1": return serving(player1(state));
-    case "PLAYER2": return serving(player2(state));
+    case "PLAYER1": return winner(serving(player1(state)));
+    case "PLAYER2": return winner(serving(player2(state)));
     case "RESET": return initial;
     default: return state;
   }
@@ -32,11 +34,6 @@ const store = createStore(
   && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-store.dispatch({ type: "PLAYER1" });
-store.dispatch({ type: "PLAYER2" });
-store.dispatch({ type: "RESET" })
-
-
 const render = () => {
   let state = store.getState();
   ReactDOM.render(
@@ -46,7 +43,8 @@ const render = () => {
       player2={state.player2}
       handleP2Increment={() => store.dispatch({ type: "PLAYER2" })}
       handleReset={() => store.dispatch({ type: "RESET" })}
-      p1Serving={state.p1Serving} />,
+      p1Serving={state.p1Serving}
+      winner={state.winner} />,
     document.getElementById('root')
   );
 }
