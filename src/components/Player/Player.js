@@ -13,7 +13,6 @@ const Player = ({ serving, score, handleClick, playerName }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 
