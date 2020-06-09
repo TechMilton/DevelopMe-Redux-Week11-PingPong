@@ -1,47 +1,38 @@
 import React from "react";
+import Player1 from "./components/Player/Player1";
+import Player2 from "./components/Player/Player2";
 
-const App = ({ player1, player2, handleP1Increment, handleP2Increment, handleReset, p1Serving, winner }) => (
-  <React.Fragment>
-    {/* header */}
-    <header className="jumbotron mt-4 mb-0">
-      <h1>PongPing</h1>
-    </header>
+const App = ({
+  handleP1Increment,
+  handleP2Increment,
+  handleReset,
+  winner }) => (
+    <React.Fragment>
 
-    {/* scores */}
-    <div className="row mb-4">
-      <div className="col-md-6 mt-4">
-        <div className={"card text-center" + (p1Serving ? " bg-dark text-white" : "")}>
-          <h5 className="card-header">Player 1</h5>
-          <div className="card-body">
-            <p className="card-text display-1">{player1}</p>
-          </div>
-          <div className="card-footer">
-            <button className="form-control btn btn-success" onClick={handleP1Increment}>+</button>
-          </div>
-        </div>
+      <header className="jumbotron mt-4 mb-0">
+        <h1>PongPing</h1>
+      </header>
+
+      <div className="row mb-4">
+        <Player1
+          handleClick={handleP1Increment}
+        />
+        <Player2
+          handleClick={handleP2Increment}
+        />
       </div>
 
-      <div className="col-md-6 mt-4">
-        <div className={"card text-center" + (p1Serving ? "" : " bg-dark text-white")}>
-          <h5 className="card-header">Player 2</h5>
-          <div className="card-body">
-            <p className="card-text display-1">{player2}</p>
-          </div>
-          <div className="card-footer">
-            <button className="form-control btn btn-success" onClick={handleP2Increment}>+</button>
-          </div>
-        </div>
-      </div>
-    </div>
+      {winner > 0 ? (
+        <h2 className="alert alert-success"> Player {winner} wins!</h2>
+      ) : null}
 
-    {winner > 0 ? (
-      <h2 className="alert alert-success"> Player {winner} wins!</h2>
-    ) : null}
-    <hr />
 
-    { /* reset button */}
-    <button className="btn btn-danger" onClick={handleReset}>Reset</button>
-  </React.Fragment >
-);
+      <hr />
+
+
+      <button className="btn btn-danger" onClick={handleReset}>Reset</button>
+
+    </React.Fragment >
+  );
 
 export default App;
