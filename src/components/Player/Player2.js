@@ -5,7 +5,7 @@ import { player2 } from "../../data/actions";
 
 const mapStateToProps = state => {
     return {
-        playerName: "Player 2",
+        playerName: state.player2Name,
         winner: state.winner,
         score: state.player2,
         serving: !state.p1Serving,

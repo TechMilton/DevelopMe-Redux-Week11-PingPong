@@ -52,7 +52,7 @@ class Settings extends Component {
                 </input>
 
                 {/* Submit Form */}
-                <button>Start Game</button>
+                <button className="btn btn-primary">Start Game</button>
 
             </form>
         );

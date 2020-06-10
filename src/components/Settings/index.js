@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Settings from "./Settings";
 import { saveSettings } from "../../data/actions"
+import history from "../../history";
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +12,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        handleSubmit: (data) => dispatch(saveSettings(data)),
+        handleSubmit: (data) => {
+            dispatch(saveSettings(data));
+            history.push("/");
+        }
     }
 }
 

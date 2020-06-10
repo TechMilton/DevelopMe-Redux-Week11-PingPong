@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Router, Route, Switch, Link } from "react-router-dom";
 
 import Player1 from "./components/Player/Player1";
 import Player2 from "./components/Player/Player2";
@@ -7,8 +7,10 @@ import Winner from "./components/Winner";
 import Reset from "./components/Reset";
 import Settings from "./components/Settings";
 
+import history from "./history";
+
 const App = ({ handleP1Increment, handleP2Increment, winner }) => (
-  <Router>
+  <Router history={history}>
     <>
       <header className="jumbotron mt-4 mb-0">
         <h1><Link to="/">Pong Ping Pong Ping </Link></h1>
