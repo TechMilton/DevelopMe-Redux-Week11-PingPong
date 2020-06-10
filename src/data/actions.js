@@ -16,3 +16,11 @@ export const reset = () => {
         type: "RESET",
     };
 };
+
+export const saveSettings = (data) => {
+    return {
+        type: "SAVE_SETTINGS",
+        player1Name: data.player1Name,
+        player2Name: data.player2Name,
+    };
+};

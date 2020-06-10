@@ -1,28 +1,37 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Player1 from "./components/Player/Player1";
 import Player2 from "./components/Player/Player2";
 import Winner from "./components/Winner";
 import Reset from "./components/Reset";
+import Settings from "./components/Settings";
 
 const App = ({ handleP1Increment, handleP2Increment, winner }) => (
-  <React.Fragment>
+  <Router>
+    <>
+      <header className="jumbotron mt-4 mb-0">
+        <h1><Link to="/">Pong Ping Pong Ping </Link></h1>
+      </header>
 
-    <header className="jumbotron mt-4 mb-0">
-      <h1>Pong Ping Pong Ping</h1>
-    </header>
+      <Switch>
+        <Route exact path="/">
+          <p><Link to="/settings">Settings</Link></p>
+          <div className="row mb-4">
+            <Player1 handleClick={handleP1Increment} />
+            <Player2 handleClick={handleP2Increment} />
+          </div>
+          <Winner winner={winner} />
+          <hr />
+          <Reset />
+        </Route>
 
-    <div className="row mb-4">
-      <Player1 handleClick={handleP1Increment} />
-      <Player2 handleClick={handleP2Increment} />
-    </div>
+        <Route exact path="/settings" component={Settings} />
+        <p>Nothing Found.</p>
 
-    <Winner winner={winner} />
-
-    <hr />
-    <Reset />
-
-  </React.Fragment >
+      </Switch>
+    </>
+  </Router >
 );
 
 export default App;
