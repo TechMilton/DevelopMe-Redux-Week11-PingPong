@@ -11,7 +11,7 @@ ReactDOM.render(
     <App
       handleP1Increment={() => store.dispatch({ type: "PLAYER1" })}
       handleP2Increment={() => store.dispatch({ type: "PLAYER2" })}
-      handleReset={() => store.dispatch({ type: "RESET" })} />
+    />
   </Provider>,
   document.getElementById('root')
 );
