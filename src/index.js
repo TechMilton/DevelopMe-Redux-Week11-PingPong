@@ -8,10 +8,7 @@ import { Provider } from "react-redux";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App
-      handleP1Increment={() => store.dispatch({ type: "PLAYER1" })}
-      handleP2Increment={() => store.dispatch({ type: "PLAYER2" })}
-    />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
