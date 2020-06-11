@@ -7,6 +7,8 @@ const mapStateToProps = state => {
     return {
         player1Name: state.player1Name,
         player2Name: state.player2Name,
+        winningScore: state.winningScore,
+        alernateEvery: state.alernateEvery,
     };
 };
 

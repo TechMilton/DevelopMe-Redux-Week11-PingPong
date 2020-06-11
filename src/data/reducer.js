@@ -2,10 +2,15 @@ import initialState from "./initialState";
 
 const player1 = state => ({ ...state, player1: state.player1 + 1 });
 const player2 = state => ({ ...state, player2: state.player2 + 1 });
-const serving = state => ({ ...state, p1Serving: (state.player1 + state.player2) % 5 === 0 ? !state.p1Serving : state.p1Serving });
-const winner = state => ({ ...state, winner: state.player1 >= 21 ? 1 : (state.player2 >= 21 ? 2 : 0) });
-const saveSettingsReducer = (state, { player1Name, player2Name }) => {
-    return { ...state, player1Name: player1Name, player2Name: player2Name }
+
+const serving = state =>
+    ({ ...state, p1Serving: (state.player1 + state.player2) % state.alernateEvery === 0 ? !state.p1Serving : state.p1Serving });
+
+const winner = (state) =>
+    ({ ...state, winner: state.player1 >= state.winningScore ? state.player1Name : (state.player2 >= state.winningScore ? state.player2Name : "") });
+
+const saveSettingsReducer = (state, { player1Name, player2Name, winningScore, alernateEvery }) => {
+    return { ...state, player1Name: player1Name, player2Name: player2Name, winningScore: winningScore, alernateEvery: alernateEvery, }
 }
 
 const reducer = (state, action) => {

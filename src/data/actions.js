@@ -22,5 +22,7 @@ export const saveSettings = (data) => {
         type: "SAVE_SETTINGS",
         player1Name: data.player1Name,
         player2Name: data.player2Name,
+        winningScore: data.winningScore,
+        alernateEvery: data.alernateEvery,
     };
 };

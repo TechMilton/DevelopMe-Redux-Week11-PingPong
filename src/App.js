@@ -26,6 +26,7 @@ const App = ({ handleP1Increment, handleP2Increment, winner }) => (
           <Winner winner={winner} />
           <hr />
           <Reset />
+          {/* Insert restart game button here */}
         </Route>
 
         <Route exact path="/settings" component={Settings} />

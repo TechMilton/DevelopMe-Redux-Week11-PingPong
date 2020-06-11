@@ -3,8 +3,10 @@ const initialState = {
     player2: 0,
     player1Name: "",
     player2Name: "",
+    winningScore: 21,
+    alernateEvery: 5,
     p1Serving: true,
-    winner: 0,
+    winner: "",
 };
 
 export default initialState;
