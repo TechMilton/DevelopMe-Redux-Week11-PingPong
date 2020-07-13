@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/TechMilton.github.io/Ping-Pong-App/static/js/main.8cf11960.chunk.js",
+    "main.js.map": "/TechMilton.github.io/Ping-Pong-App/static/js/main.8cf11960.chunk.js.map",
+    "runtime-main.js": "/TechMilton.github.io/Ping-Pong-App/static/js/runtime-main.145d410a.js",
+    "runtime-main.js.map": "/TechMilton.github.io/Ping-Pong-App/static/js/runtime-main.145d410a.js.map",
+    "static/js/2.8e349b44.chunk.js": "/TechMilton.github.io/Ping-Pong-App/static/js/2.8e349b44.chunk.js",
+    "static/js/2.8e349b44.chunk.js.map": "/TechMilton.github.io/Ping-Pong-App/static/js/2.8e349b44.chunk.js.map",
+    "index.html": "/TechMilton.github.io/Ping-Pong-App/index.html",
+    "precache-manifest.6169385efc5300de1734fe3248af416e.js": "/TechMilton.github.io/Ping-Pong-App/precache-manifest.6169385efc5300de1734fe3248af416e.js",
+    "service-worker.js": "/TechMilton.github.io/Ping-Pong-App/service-worker.js",
+    "static/js/2.8e349b44.chunk.js.LICENSE.txt": "/TechMilton.github.io/Ping-Pong-App/static/js/2.8e349b44.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.145d410a.js",
+    "static/js/2.8e349b44.chunk.js",
+    "static/js/main.8cf11960.chunk.js"
+  ]
+}
